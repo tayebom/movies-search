@@ -2,7 +2,7 @@ import { useState, useEffect, useCallback } from "react";
 import { MovieDetails } from "../types/movieTypes";
 import { fetchMovies, fetchMovieDetails } from "../services/omdbApi";
 
-// Custom hook for fetching movie data
+// custom hook for fetching movie data
 export const useMovies = (searchTerm: string) => {
   const [movies, setMovies] = useState<MovieDetails[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
@@ -21,7 +21,7 @@ export const useMovies = (searchTerm: string) => {
         })
       );
 
-      // Filter out null values if fetching details fails
+      // filter out null values if fetching details fails
       setMovies(detailedMovies.filter((movie) => movie !== null) as MovieDetails[]);
     } catch (error) {
       setError("Failed to load movies. Please try again.");

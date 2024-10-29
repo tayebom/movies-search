@@ -4,13 +4,13 @@ import { Movie, MovieDetails } from "../types/movieTypes";
 const OMDB_API_URL = "https://www.omdbapi.com/";
 const API_KEY = "56d8ec28";
 
-// Fetch movies by search term from the OMDb API
+// fetch movies by search term from the OMDb API
 export const fetchMovies = async (query: string): Promise<Movie[]> => {
   try {
     const response = await axios.get(OMDB_API_URL, {
       params: {
         apikey: API_KEY,
-        s: query, // Search term for movies
+        s: query, // search term for movies
       },
     });
     if (response.data.Response === "True") {
@@ -23,7 +23,7 @@ export const fetchMovies = async (query: string): Promise<Movie[]> => {
   }
 };
 
-// Fetch detailed movie data (language, ratings, etc.)
+// fetch detailed movie data (language, ratings, etc.)
 export const fetchMovieDetails = async (
   movieId: string
 ): Promise<MovieDetails | null> => {
