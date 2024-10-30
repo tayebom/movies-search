@@ -5,7 +5,8 @@ const OMDB_API_URL = "https://www.omdbapi.com/";
 const API_KEY = "56d8ec28";
 
 // fetch movies by search term from the OMDb API
-export const fetchMovies = async (query: string): Promise<Movie[]> => {
+export const fetchMovies = async (query: string): 
+Promise<Movie[]> => {
   try {
     const response = await axios.get(OMDB_API_URL, {
       params: {
@@ -24,9 +25,8 @@ export const fetchMovies = async (query: string): Promise<Movie[]> => {
 };
 
 // fetch detailed movie data (language, ratings, etc.)
-export const fetchMovieDetails = async (
-  movieId: string
-): Promise<MovieDetails | null> => {
+export const fetchMovieDetails = async (movieId: string):
+Promise<MovieDetails | null> => {
   try {
     const response = await axios.get(OMDB_API_URL, {
       params: {
